@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investment Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar" aria-label="Portfolio navigation">
+      <div class="brand">
+        <span class="brand-mark">ID</span>
+        <div>
+          <strong>Investment Desk</strong>
+          <small>Portfolio command center</small>
+        </div>
+      </div>
+
+      <nav class="nav-list">
+        <a class="active" href="#overview">Overview</a>
+        <a href="#allocation">Allocation</a>
+        <a href="#holdings">Holdings</a>
+        <a href="#watchlist">Watchlist</a>
+      </nav>
+
+      <div class="market-note">
+        <span>Market stance</span>
+        <strong>Balanced growth</strong>
+        <small>Risk trimmed, cash ready for pullbacks.</small>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Updated dashboard</p>
+          <h1>Portfolio Overview</h1>
+        </div>
+        <div class="actions">
+          <button class="icon-button" aria-label="Download report" title="Download report">↓</button>
+          <button class="primary-button">Rebalance</button>
+        </div>
+      </header>
+
+      <section class="kpi-grid" id="overview" aria-label="Portfolio summary">
+        <article class="kpi">
+          <span>Total value</span>
+          <strong>$428,940</strong>
+          <small class="positive">+$12,480 this month</small>
+        </article>
+        <article class="kpi">
+          <span>Daily change</span>
+          <strong>+1.34%</strong>
+          <small class="positive">Outperforming benchmark</small>
+        </article>
+        <article class="kpi">
+          <span>Annual return</span>
+          <strong>14.8%</strong>
+          <small class="neutral">Trailing 12 months</small>
+        </article>
+        <article class="kpi">
+          <span>Cash reserve</span>
+          <strong>$31,250</strong>
+          <small class="neutral">7.3% of portfolio</small>
+        </article>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="panel performance-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Performance</p>
+              <h2>Portfolio vs. benchmark</h2>
+            </div>
+            <div class="segmented" aria-label="Time range">
+              <button class="active">1Y</button>
+              <button>3Y</button>
+              <button>5Y</button>
+            </div>
+          </div>
+          <div class="chart-wrap">
+            <svg id="lineChart" viewBox="0 0 720 300" role="img" aria-label="Portfolio performance line chart"></svg>
+          </div>
+        </article>
+
+        <article class="panel allocation-panel" id="allocation">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Allocation</p>
+              <h2>Asset mix</h2>
+            </div>
+          </div>
+          <div class="allocation-layout">
+            <div class="donut" aria-label="Asset allocation chart">
+              <span>100%</span>
+            </div>
+            <ul class="legend" id="allocationLegend"></ul>
+          </div>
+        </article>
+
+        <article class="panel holdings-panel" id="holdings">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Holdings</p>
+              <h2>Largest positions</h2>
+            </div>
+            <button class="text-button">View all</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Asset</th>
+                  <th>Value</th>
+                  <th>Weight</th>
+                  <th>Today</th>
+                </tr>
+              </thead>
+              <tbody id="holdingsRows"></tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="panel watchlist-panel" id="watchlist">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Watchlist</p>
+              <h2>Opportunity radar</h2>
+            </div>
+          </div>
+          <div class="watchlist" id="watchlistCards"></div>
+        </article>
+
+        <article class="panel risk-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Risk</p>
+              <h2>Portfolio health</h2>
+            </div>
+          </div>
+          <div class="risk-list">
+            <div>
+              <span>Volatility</span>
+              <meter min="0" max="100" value="46"></meter>
+              <strong>Moderate</strong>
+            </div>
+            <div>
+              <span>Concentration</span>
+              <meter min="0" max="100" value="58"></meter>
+              <strong>Watch</strong>
+            </div>
+            <div>
+              <span>Liquidity</span>
+              <meter min="0" max="100" value="82"></meter>
+              <strong>Strong</strong>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
